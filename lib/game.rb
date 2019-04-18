@@ -3,14 +3,14 @@ require "board"
 require "boardcase"
 require "show"
 
-# This is the controller. It will ask the board object to create the table game and will ask the view and player object to start gaming !
+
 class Game
   @@rounds = 0
 
   def initialize
-    # @show = Show.new
+
     @board = Board.new
-    # @boardcase = BoardCase.new
+
   end
 
   def create_game
@@ -20,9 +20,8 @@ class Game
 
     params_player_two = Show.new.create_player_o
     @player_two = Player.new(params_player_two[:name], params_player_two[:type])
-    
-    # @board.display_board
-    # update_game
+
+
     @board.update_board
   end
 end
@@ -31,7 +30,7 @@ testrounds_win = ["A1", "B3", "C2", "A2", "B2", "A3"]
 testrounds_not = ["A1", "B3", "C2", "A2", "B2", "C1"]
 
 def check_if_won(round)
-  # rounds est l'array des tours joués par les deux joueurs
+
   winning_combinations = [
     [1, 2, 3],
     [4, 5, 6],
@@ -43,7 +42,7 @@ def check_if_won(round)
     [3, 5, 7],
   ]
 
-  # Est-ce que les trois éléments d'une des combinaisons gagnantes se retrouve dans l'array?
+
   winning_combinations.each do |winning|
     test = false
     if round.include?(winning[0]) && round.include?(winning[1]) && round.include?(winning[2])

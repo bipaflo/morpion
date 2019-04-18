@@ -1,4 +1,3 @@
-
 require 'game'
 require 'tty-prompt'
 
