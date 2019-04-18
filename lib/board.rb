@@ -69,3 +69,4 @@ class Board
       update_board
     end
   end
+end
